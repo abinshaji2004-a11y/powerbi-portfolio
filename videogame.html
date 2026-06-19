@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 Video Game Market Intelligence</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow:hidden;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    text-align:center;
+    padding:12px 20px;
+    background:
+    radial-gradient(circle at center,
+    rgba(139,92,246,.20),
+    transparent 50%),
+    linear-gradient(135deg,#111827,#1e293b);
+
+    border-bottom:2px solid #8b5cf6;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    position:absolute;
+    left:20px;
+    top:20px;
+
+    text-decoration:none;
+    color:white;
+
+    border:1px solid #8b5cf6;
+    border-radius:12px;
+
+    padding:10px 18px;
+
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#8b5cf6;
+}
+
+/* FEATURED */
+
+.featured{
+    display:inline-block;
+
+    background:linear-gradient(
+    135deg,
+    #8b5cf6,
+    #a855f7
+    );
+
+    padding:7px 15px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+/* TITLE */
+
+.hero h1{
+    font-size:42px;
+    font-weight:900;
+
+    background:linear-gradient(
+    90deg,
+    #ffffff,
+    #d8b4fe,
+    #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+/* LINE */
+
+.gradient-line{
+    height:3px;
+
+    background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #06b6d4,
+    #8b5cf6
+    );
+}
+
+/* KPI */
+
+.kpi-strip{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:12px;
+
+    background:#111827;
+}
+
+.kpi{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(139,92,246,.4);
+
+    border-radius:999px;
+
+    padding:12px 22px;
+
+    color:#e9d5ff;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.kpi:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 25px rgba(139,92,246,.3);
+}
+
+/* DASHBOARD */
+
+.dashboard-wrapper{
+    width:98%;
+    margin:10px auto;
+}
+
+.dashboard{
+
+    height:calc(100vh - 190px);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(139,92,246,.25);
+
+    box-shadow:
+    0 15px 50px rgba(139,92,246,.2);
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:28px;
+}
+
+.subtitle{
+    font-size:13px;
+}
+
+.kpi{
+    font-size:13px;
+    padding:10px 16px;
+}
+
+.dashboard{
+    height:calc(100vh - 250px);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<a href="index.html" class="back-btn">
+← Portfolio
+</a>
+
+<div class="featured">
+🔥 Featured Power BI Project
+</div>
+
+<h1>
+🎮 Video Game Market Intelligence
+</h1>
+
+<p class="subtitle">
+Global Gaming Trends • Publisher Insights • Platform Analytics
+</p>
+
+</div>
+
+<div class="gradient-line"></div>
+
+<div class="kpi-strip">
+
+<div class="kpi">🕹️ 17K Games</div>
+
+<div class="kpi">💰 8.92K Sales</div>
+
+<div class="kpi">🏢 579 Publishers</div>
+
+<div class="kpi">🚀 31 Platforms</div>
+
+<div class="kpi">📊 Power BI</div>
+
+<div class="kpi">⚡ DAX</div>
+
+</div>
+
+<div class="dashboard-wrapper">
+
+<div class="dashboard">
+
+<iframe
+title="Video Game Analysis"
+src="https://app.powerbi.com/view?r=eyJrIjoiYTRlM2U1YjEtN2ZmMC00MDA2LThmNDItNDA3NTVmYzYxMDA0IiwidCI6IjIwNGEzM2FmLThmZWYtNDMyMi1hOTRkLTlhZDYyNjYwMjQ4MCJ9"
+allowfullscreen="true">
+</iframe>
+
+</div>
+
+</div>
+
+</body>
+</html>

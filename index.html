@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abin | Data Analytics Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(135deg,#0f172a,#1e40af,#06b6d4);
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#dbeafe;
+}
+
+.hero .name{
+    color:#fbbf24;
+    font-size:28px;
+    font-weight:700;
+    margin-top:20px;
+}
+
+.hero .role{
+    margin-top:12px;
+    font-size:20px;
+}
+
+/* Section */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#60a5fa;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+/* About */
+
+.about{
+    background:#1e293b;
+    padding:35px;
+    border-radius:20px;
+    line-height:2;
+    color:#cbd5e1;
+    font-size:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Skills */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#2563eb;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.skill:hover{
+    background:#3b82f6;
+    transform:translateY(-3px);
+}
+
+/* Project Cards */
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    width:320px;
+    padding:25px;
+    background:#1e293b;
+    border-radius:20px;
+    border:1px solid #2563eb;
+    box-shadow:0 10px 25px rgba(59,130,246,.20);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.featured{
+    border:2px solid #fbbf24;
+    box-shadow:0 0 25px rgba(251,191,36,.35);
+}
+
+.card h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#3b82f6;
+}
+
+.coming{
+    background:#475569;
+    pointer-events:none;
+}
+
+/* Contact */
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 20px;
+    border-radius:10px;
+    margin:10px;
+    display:inline-block;
+    transition:.3s;
+}
+
+.contact a:hover{
+    background:#3b82f6;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid #1e40af;
+    color:#93c5fd;
+    margin-top:30px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero .name{
+    font-size:22px;
+}
+
+.card{
+    width:100%;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Hero -->
+
+<div class="hero">
+
+    <h1>📊 Analytics & Business Intelligence Portfolio</h1>
+
+    <p>Interactive Power BI Dashboards for Real-World Business Analysis</p>
+
+    <div class="name">
+        Abin Shaji
+    </div>
+
+    <div class="role">
+        🚀 Turning Data into Actionable Insights
+    </div>
+
+    <div class="role">
+        Data Analyst | Power BI Developer | SQL Enthusiast
+    </div>
+
+</div>
+
+<!-- About -->
+
+<section class="section">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+        I am a BBA graduate and aspiring Data Analyst with hands-on experience
+        in Power BI, SQL, Python and Excel. I create interactive dashboards
+        and business intelligence solutions that transform raw data into
+        meaningful insights for better decision-making.
+
+    </div>
+
+</section>
+
+<!-- Skills -->
+
+<section class="section">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">Power BI</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Python</div>
+        <div class="skill">Excel</div>
+        <div class="skill">DAX</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">Business Intelligence</div>
+        <div class="skill">Data Cleaning</div>
+
+    </div>
+
+</section>
+
+<!-- Projects -->
+
+<section class="section">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="container">
+
+        <div class="card featured">
+
+            <h2>🎮 Video Game Market Intelligence Dashboard</h2>
+
+            <p>
+                Analyze global video game sales, publisher performance,
+                platform trends, genres and yearly market insights using Power BI.
+            </p>
+
+            <a href="videogame.html" class="btn">
+                View Dashboard
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎓 College Admission Dashboard</h2>
+
+            <p>
+                Student enrollment analysis, admission trends,
+                course popularity and academic insights.
+            </p>
+
+            <a href="#" class="btn coming">
+                Coming Soon
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🛒 Super Market Analysis Dashboard</h2>
+
+            <p>
+                Revenue tracking, product performance,
+                customer behavior and sales analysis.
+            </p>
+
+            <a href="#" class="btn coming">
+                Coming Soon
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏪 Retail Sales Dashboard</h2>
+
+            <p>
+                Product trends, profitability analysis
+                and business performance insights.
+            </p>
+
+            <a href="#" class="btn coming">
+                Coming Soon
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="section">
+
+    <h2 class="section-title">Connect With Me</h2>
+
+    <div class="contact">
+
+        <a href="https://github.com/abinshaji2004-a11y" target="_blank">
+            GitHub
+        </a>
+
+        <a href="#" target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    © 2026 Abin Shaji | Power BI & Data Analytics Portfolio
+
+    <br><br>
+
+    Built with HTML, CSS & Power BI
+
+</footer>
+
+</body>
+</html>
