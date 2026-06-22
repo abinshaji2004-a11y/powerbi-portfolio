@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Video Game Market Intelligence | Cyber Console</title>
+    <title>🎓 College Admission Analytics | Power BI Dashboard</title>
     
-    <!-- Google Fonts: Plus Jakarta Sans & Share Tech Mono (for techy font) -->
+    <!-- Google Fonts: Plus Jakarta Sans & Share Tech Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -14,21 +14,21 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* CYBERPUNK & GAMER THEME VARIABLES */
+        /* CONSOLE THEME VARIABLES */
         :root {
             --bg-dark: #03060f;
             --bg-card: rgba(6, 10, 26, 0.8);
             --bg-header: rgba(4, 7, 18, 0.95);
-            --primary: #00ff66; /* Cyber Neon Green */
-            --primary-glow: rgba(0, 255, 102, 0.3);
-            --secondary: #ff0055; /* Cyber Neon Red/Pink */
-            --secondary-glow: rgba(255, 0, 85, 0.3);
-            --accent: #fffb00; /* Cyber Neon Yellow */
+            --primary: #3b82f6; /* Royal Blue */
+            --primary-glow: rgba(59, 130, 246, 0.3);
+            --secondary: #00ffaa; /* Teal */
+            --secondary-glow: rgba(0, 255, 170, 0.3);
+            --accent: #fbbf24;
             --text-main: #f8fafc;
             --text-muted: #576f8e;
             --text-light: #94a3b8;
-            --border-color: rgba(0, 255, 102, 0.25);
-            --border-hover: rgba(0, 255, 102, 0.6);
+            --border-color: rgba(96, 165, 250, 0.2);
+            --border-hover: rgba(0, 255, 170, 0.5);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -49,7 +49,7 @@
             position: relative;
         }
 
-        /* DIGITAL CYBER GRID PATTERN BACKGROUND */
+        /* GRID PATTERN BACKGROUND */
         body::before {
             content: '';
             position: fixed;
@@ -58,8 +58,8 @@
             width: 100vw;
             height: 100vh;
             background-image: 
-                linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
             background-size: 30px 30px;
             z-index: -2;
             pointer-events: none;
@@ -73,13 +73,13 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(at 0% 0%, rgba(0, 255, 102, 0.08) 0, transparent 40%),
-                radial-gradient(at 100% 0%, rgba(255, 0, 85, 0.08) 0, transparent 40%);
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0, transparent 40%),
+                radial-gradient(at 100% 0%, rgba(0, 255, 170, 0.08) 0, transparent 40%);
             z-index: -2;
             pointer-events: none;
         }
 
-        /* BACKGROUND NEBULA GLOW SPHERES */
+        /* GLOW SPHERES */
         .glow-sphere {
             position: absolute;
             border-radius: 50%;
@@ -89,14 +89,14 @@
             opacity: 0.65;
             animation: pulse-glow 8s ease-in-out infinite alternate;
         }
-        .sphere-green {
+        .sphere-blue {
             top: -10%;
             left: 20%;
             width: 400px;
             height: 400px;
             background: var(--primary-glow);
         }
-        .sphere-red {
+        .sphere-teal {
             bottom: 10%;
             right: 10%;
             width: 350px;
@@ -110,7 +110,7 @@
             100% { transform: scale(1.1) translate(10px, -10px); opacity: 0.8; }
         }
 
-        /* HEADER BANNER */
+        /* HEADER */
         .header-banner {
             position: relative;
             background: var(--bg-header);
@@ -119,7 +119,7 @@
             border-bottom: 2px solid var(--border-color);
             padding: 18px 24px;
             z-index: 10;
-            box-shadow: 0 4px 30px rgba(0, 255, 102, 0.08);
+            box-shadow: 0 4px 30px rgba(96, 165, 250, 0.08);
         }
 
         .header-wrapper {
@@ -130,7 +130,7 @@
             align-items: center;
         }
 
-        /* CYBER BACK BUTTON */
+        /* BACK BUTTON */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -145,7 +145,7 @@
             font-size: 14px;
             letter-spacing: 0.5px;
             transition: var(--transition);
-            box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.1);
+            box-shadow: inset 0 0 10px rgba(96, 165, 250, 0.1);
         }
 
         .back-btn span {
@@ -155,13 +155,13 @@
 
         .back-btn:hover {
             border-color: var(--secondary);
-            background: rgba(255, 0, 85, 0.1);
+            background: rgba(0, 255, 170, 0.08);
             color: white;
             transform: translateX(-4px);
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.35);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.25);
         }
 
-        /* CENTER HEADER TITLE */
+        /* CENTER TITLES */
         .header-titles {
             text-align: center;
         }
@@ -182,17 +182,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
         }
 
         .featured-badge i {
             color: var(--secondary);
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
         }
 
         .header-titles h1 {
@@ -203,7 +196,7 @@
             background: linear-gradient(90deg, #ffffff, var(--primary) 60%, var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+            text-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
         }
 
         .subtitle {
@@ -214,10 +207,10 @@
             font-family: 'Share Tech Mono', monospace;
         }
 
-        /* HUD METRIC KPI STRIP */
+        /* KPI STRIP */
         .kpi-strip {
             background: rgba(3, 6, 15, 0.8);
-            border-bottom: 1px solid rgba(0, 255, 102, 0.15);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.15);
             padding: 12px 24px;
             display: flex;
             justify-content: center;
@@ -240,14 +233,13 @@
             align-items: center;
             gap: 10px;
             transition: var(--transition);
-            box-shadow: inset 0 0 8px rgba(0, 255, 102, 0.05);
         }
 
         .kpi:hover {
             transform: translateY(-2px);
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.25);
-            text-shadow: 0 0 5px var(--primary);
+            border-color: var(--secondary);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.25);
+            text-shadow: 0 0 5px var(--secondary);
         }
 
         .kpi i {
@@ -257,20 +249,14 @@
         }
 
         .kpi.kpi-accent {
-            border-color: rgba(255, 0, 85, 0.3);
-        }
-
-        .kpi.kpi-accent:hover {
-            border-color: var(--secondary);
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.25);
-            text-shadow: 0 0 5px var(--secondary);
+            border-color: rgba(0, 255, 170, 0.3);
         }
 
         .kpi.kpi-accent i {
             color: var(--secondary);
         }
 
-        /* CONSOLE DASHBOARD VIEWPORT */
+        /* DASHBOARD */
         .dashboard-container {
             flex-grow: 1;
             padding: 20px;
@@ -280,7 +266,6 @@
             position: relative;
         }
 
-        /* FUTURISTIC ARCADE FRAME */
         .dashboard-console-panel {
             width: 100%;
             height: 100%;
@@ -291,12 +276,12 @@
             border: 2px solid var(--border-color);
             border-radius: 12px;
             background: #040815;
-            box-shadow: 0 0 30px rgba(0, 255, 102, 0.15);
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.15);
             overflow: hidden;
             position: relative;
         }
 
-        /* HUD Console Header Bar */
+        /* HUD Header Bar */
         .console-header-bar {
             background: #091024;
             border-bottom: 2px solid var(--border-color);
@@ -315,7 +300,6 @@
             align-items: center;
             gap: 8px;
             color: var(--primary);
-            text-shadow: 0 0 8px var(--primary-glow);
         }
 
         .console-status-dot {
@@ -336,7 +320,7 @@
             color: var(--secondary);
         }
 
-        /* Main View Frame */
+        /* View frame */
         .dashboard-frame {
             flex-grow: 1;
             position: relative;
@@ -350,7 +334,7 @@
             background: #141b2d;
         }
 
-        /* FUTURISTIC HUD CORNERS */
+        /* HUD Corners */
         .hud-corner {
             position: absolute;
             width: 16px;
@@ -409,8 +393,8 @@
 <body>
 
     <!-- NEBULA LIGHT GLOWS -->
-    <div class="glow-sphere sphere-green"></div>
-    <div class="glow-sphere sphere-red"></div>
+    <div class="glow-sphere sphere-blue"></div>
+    <div class="glow-sphere sphere-teal"></div>
 
     <!-- GLASS HEADER -->
     <header class="header-banner">
@@ -423,10 +407,10 @@
             <!-- HUD TITLE BLOCK -->
             <div class="header-titles">
                 <div class="featured-badge">
-                    <i data-lucide="shield-alert"></i> FEATURED POWER BI CORE
+                    <i data-lucide="graduation-cap"></i> Featured Academic Dashboard
                 </div>
-                <h1>Video Game Market Intelligence</h1>
-                <p class="subtitle">SYS_READY // DATAFRAME_ENGAGED // PUBLISHER_TRENDS</p>
+                <h1>College Admission & Enrollment Analytics</h1>
+                <p class="subtitle">SYS_READY // DATAFRAME_ENGAGED // ENROLLMENT_TRENDS</p>
             </div>
 
             <!-- RIGHT SPACE ALIGNMENT -->
@@ -437,33 +421,33 @@
     <!-- HUD METRIC KPI STRIP -->
     <div class="kpi-strip">
         <div class="kpi">
-            <i data-lucide="gamepad-2"></i>
-            <span>17K GAMES</span>
+            <i data-lucide="users"></i>
+            <span>Students Analysis</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="dollar-sign"></i>
-            <span>8.92K SALES</span>
+            <i data-lucide="building"></i>
+            <span>Course Popularity</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="building-2"></i>
-            <span>579 PUBLISHERS</span>
+            <i data-lucide="line-chart"></i>
+            <span>Admission Trends</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="cpu"></i>
-            <span>31 PLATFORMS</span>
+            <i data-lucide="map-pin"></i>
+            <span>Geographic Distribution</span>
         </div>
         
         <div class="kpi kpi-accent">
             <i data-lucide="database"></i>
-            <span>POWER BI EMBEDDED</span>
+            <span>Power BI Embedded</span>
         </div>
         
         <div class="kpi kpi-accent">
             <i data-lucide="terminal"></i>
-            <span>DAX CORE SCRIPT</span>
+            <span>DAX Expressions</span>
         </div>
     </div>
 
@@ -490,8 +474,8 @@
             <!-- Dashboard Frame -->
             <div class="dashboard-frame">
                 <iframe
-                    title="Video Game Analysis"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiYTRlM2U1YjEtN2ZmMC00MDA2LThmNDItNDA3NTVmYzYxMDA0IiwidCI6IjIwNGEzM2FmLThmZWYtNDMyMi1hOTRkLTlhZDYyNjYwMjQ4MCJ9"
+                    title="COLLEGE ADMISSION MODIFIED_NEW"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMDU1NmY1NzQtZjEzOS00YWY2LWE2MDQtNGE2Zjg0ZjhmZDk0IiwidCI6IjIwNGEzM2FmLThmZWYtNDMyMi1hOTRkLTlhZDYyNjYwMjQ4MCJ9"
                     allowfullscreen="true">
                 </iframe>
             </div>
