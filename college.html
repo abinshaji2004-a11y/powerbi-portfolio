@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎓 College Admission Analytics | Power BI Dashboard</title>
+    <title>College Admission Analytics | Executive Dashboard</title>
     
-    <!-- Google Fonts: Plus Jakarta Sans & Share Tech Mono -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* CONSOLE THEME VARIABLES */
+        /* EXECUTIVE ANALYTICS THEME VARIABLES */
         :root {
-            --bg-dark: #03060f;
-            --bg-card: rgba(6, 10, 26, 0.8);
-            --bg-header: rgba(4, 7, 18, 0.95);
-            --primary: #3b82f6; /* Royal Blue */
-            --primary-glow: rgba(59, 130, 246, 0.3);
-            --secondary: #00ffaa; /* Teal */
-            --secondary-glow: rgba(0, 255, 170, 0.3);
-            --accent: #fbbf24;
+            --bg-dark: #070b19;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-header: rgba(10, 15, 30, 0.95);
+            --primary: #2563eb; /* Executive Royal Blue */
+            --primary-glow: rgba(37, 99, 235, 0.2);
+            --secondary: #0ea5e9; /* Light Ocean Blue */
+            --secondary-glow: rgba(14, 165, 233, 0.15);
+            --accent: #10b981; /* Success Emerald Green */
             --text-main: #f8fafc;
-            --text-muted: #576f8e;
-            --text-light: #94a3b8;
-            --border-color: rgba(96, 165, 250, 0.2);
-            --border-hover: rgba(0, 255, 170, 0.5);
+            --text-muted: #64748b;
+            --text-light: #cbd5e1;
+            --border-color: rgba(37, 99, 235, 0.15);
+            --border-hover: rgba(14, 165, 233, 0.4);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -49,7 +49,7 @@
             position: relative;
         }
 
-        /* GRID PATTERN BACKGROUND */
+        /* ELEGANT GRADIENT BACKDROP */
         body::before {
             content: '';
             position: fixed;
@@ -58,68 +58,22 @@
             width: 100vw;
             height: 100vh;
             background-image: 
-                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.12) 0, transparent 45%),
+                radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.08) 0, transparent 45%);
             z-index: -2;
             pointer-events: none;
         }
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0, transparent 40%),
-                radial-gradient(at 100% 0%, rgba(0, 255, 170, 0.08) 0, transparent 40%);
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        /* GLOW SPHERES */
-        .glow-sphere {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(140px);
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.65;
-            animation: pulse-glow 8s ease-in-out infinite alternate;
-        }
-        .sphere-blue {
-            top: -10%;
-            left: 20%;
-            width: 400px;
-            height: 400px;
-            background: var(--primary-glow);
-        }
-        .sphere-teal {
-            bottom: 10%;
-            right: 10%;
-            width: 350px;
-            height: 350px;
-            background: var(--secondary-glow);
-            animation-duration: 6s;
-        }
-
-        @keyframes pulse-glow {
-            0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
-            100% { transform: scale(1.1) translate(10px, -10px); opacity: 0.8; }
-        }
-
-        /* HEADER */
+        /* HEADER BANNER */
         .header-banner {
             position: relative;
             background: var(--bg-header);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 18px 24px;
             z-index: 10;
-            box-shadow: 0 4px 30px rgba(96, 165, 250, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-wrapper {
@@ -130,35 +84,28 @@
             align-items: center;
         }
 
-        /* BACK BUTTON */
+        /* EXECUTIVE BACK BUTTON */
         .back-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
-            color: var(--text-main);
-            background: rgba(0, 0, 0, 0.6);
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 10px 18px;
-            font-family: 'Share Tech Mono', monospace;
             font-size: 14px;
-            letter-spacing: 0.5px;
+            font-weight: 600;
             transition: var(--transition);
-            box-shadow: inset 0 0 10px rgba(96, 165, 250, 0.1);
-        }
-
-        .back-btn span {
-            color: var(--secondary);
-            font-weight: 700;
         }
 
         .back-btn:hover {
             border-color: var(--secondary);
-            background: rgba(0, 255, 170, 0.08);
+            background: rgba(14, 165, 233, 0.1);
             color: white;
-            transform: translateX(-4px);
-            box-shadow: 0 0 15px rgba(0, 255, 170, 0.25);
+            transform: translateX(-3px);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.15);
         }
 
         /* CENTER TITLES */
@@ -170,65 +117,57 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--border-color);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.2);
             padding: 6px 14px;
-            border-radius: 4px;
-            font-family: 'Share Tech Mono', monospace;
+            border-radius: 6px;
             font-size: 12px;
-            font-weight: 600;
-            color: var(--primary);
-            text-shadow: 0 0 8px var(--primary-glow);
+            font-weight: 700;
+            color: #93c5fd;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
         }
 
-        .featured-badge i {
-            color: var(--secondary);
-        }
-
         .header-titles h1 {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 6px;
-            background: linear-gradient(90deg, #ffffff, var(--primary) 60%, var(--secondary));
+            letter-spacing: -0.75px;
+            margin-bottom: 4px;
+            background: linear-gradient(90deg, #ffffff 40%, #bfdbfe 80%, #60a5fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
         }
 
         .subtitle {
             color: var(--text-light);
             font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            font-family: 'Share Tech Mono', monospace;
+            font-weight: 500;
+            letter-spacing: 0.25px;
         }
 
-        /* KPI STRIP */
+        /* KPI REPORT STRIP */
         .kpi-strip {
-            background: rgba(3, 6, 15, 0.8);
-            border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+            background: rgba(7, 11, 25, 0.7);
+            border-bottom: 1px solid var(--border-color);
             padding: 12px 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
             z-index: 5;
             backdrop-filter: blur(8px);
         }
 
         .kpi {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
             padding: 8px 18px;
-            color: white;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 14px;
+            color: var(--text-light);
+            font-size: 13px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -237,33 +176,40 @@
 
         .kpi:hover {
             transform: translateY(-2px);
-            border-color: var(--secondary);
-            box-shadow: 0 0 15px rgba(0, 255, 170, 0.25);
-            text-shadow: 0 0 5px var(--secondary);
+            background: rgba(37, 99, 235, 0.08);
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+            color: white;
         }
 
         .kpi i {
-            color: var(--primary);
-            width: 16px;
-            height: 16px;
+            color: var(--secondary);
+            width: 15px;
+            height: 15px;
         }
 
         .kpi.kpi-accent {
-            border-color: rgba(0, 255, 170, 0.3);
+            border-color: rgba(16, 185, 129, 0.25);
+            background: rgba(16, 185, 129, 0.02);
+        }
+
+        .kpi.kpi-accent:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
         }
 
         .kpi.kpi-accent i {
-            color: var(--secondary);
+            color: var(--accent);
         }
 
-        /* DASHBOARD */
+        /* CONSOLE DASHBOARD VIEWPORT */
         .dashboard-container {
             flex-grow: 1;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            background: rgba(3, 6, 15, 0.4);
-            position: relative;
+            background: rgba(6, 10, 23, 0.25);
         }
 
         .dashboard-console-panel {
@@ -273,42 +219,47 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            background: #040815;
-            box-shadow: 0 0 30px rgba(96, 165, 250, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: #050915;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
             overflow: hidden;
             position: relative;
+            transition: var(--transition);
         }
 
-        /* HUD Header Bar */
+        .dashboard-console-panel:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.1);
+        }
+
+        /* Executive Header Bar */
         .console-header-bar {
-            background: #091024;
-            border-bottom: 2px solid var(--border-color);
-            padding: 10px 20px;
+            background: #0a0f24;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: 600;
             color: var(--text-light);
-            letter-spacing: 0.5px;
         }
 
         .console-status {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .console-status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary);
+            width: 7px;
+            height: 7px;
+            background-color: var(--accent);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--primary);
-            animation: pulse-dot 1s infinite alternate;
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse-dot 1.2s infinite alternate;
         }
 
         @keyframes pulse-dot {
@@ -317,10 +268,11 @@
         }
 
         .console-sysinfo {
-            color: var(--secondary);
+            color: var(--text-muted);
+            font-size: 12px;
         }
 
-        /* View frame */
+        /* Main View Frame */
         .dashboard-frame {
             flex-grow: 1;
             position: relative;
@@ -333,20 +285,6 @@
             border: none;
             background: #141b2d;
         }
-
-        /* HUD Corners */
-        .hud-corner {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--secondary);
-            z-index: 15;
-            pointer-events: none;
-        }
-        .corner-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-        .corner-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
-        .corner-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
-        .corner-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
         /* RESPONSIVE DESIGN */
         @media (max-width: 992px) {
@@ -373,7 +311,7 @@
 
         @media (max-width: 768px) {
             .header-titles h1 {
-                font-size: 24px;
+                font-size: 22px;
             }
             .kpi-strip {
                 gap: 8px;
@@ -387,30 +325,29 @@
                 height: 550px;
                 padding: 8px;
             }
+            .dashboard-console-panel {
+                border-radius: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NEBULA LIGHT GLOWS -->
-    <div class="glow-sphere sphere-blue"></div>
-    <div class="glow-sphere sphere-teal"></div>
-
-    <!-- GLASS HEADER -->
+    <!-- HEADER BANNER -->
     <header class="header-banner">
         <div class="header-wrapper">
-            <!-- CYBER BACK BUTTON -->
+            <!-- EXECUTIVE BACK BUTTON -->
             <a href="index.html" class="back-btn">
-                <span>[ ESC ]</span> PORTFOLIO
+                <i data-lucide="arrow-left"></i> [ ESC ] Return to Portfolio
             </a>
 
-            <!-- HUD TITLE BLOCK -->
+            <!-- TITLE BLOCK -->
             <div class="header-titles">
                 <div class="featured-badge">
-                    <i data-lucide="graduation-cap"></i> Featured Academic Dashboard
+                    <i data-lucide="graduation-cap"></i> Interactive Admission Report
                 </div>
                 <h1>College Admission & Enrollment Analytics</h1>
-                <p class="subtitle">SYS_READY // DATAFRAME_ENGAGED // ENROLLMENT_TRENDS</p>
+                <p class="subtitle">Historical Admissions Performance & Institutional Enrollment Analysis</p>
             </div>
 
             <!-- RIGHT SPACE ALIGNMENT -->
@@ -418,56 +355,50 @@
         </div>
     </header>
 
-    <!-- HUD METRIC KPI STRIP -->
+    <!-- KPI REPORT STRIP -->
     <div class="kpi-strip">
         <div class="kpi">
             <i data-lucide="users"></i>
-            <span>Students Analysis</span>
+            <span>Enrollment Demographics</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="building"></i>
-            <span>Course Popularity</span>
+            <i data-lucide="graduation-cap"></i>
+            <span>Departmental Yields</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="line-chart"></i>
-            <span>Admission Trends</span>
+            <i data-lucide="trending-up"></i>
+            <span>Historical Admission Rates</span>
         </div>
         
         <div class="kpi">
-            <i data-lucide="map-pin"></i>
+            <i data-lucide="globe"></i>
             <span>Geographic Distribution</span>
         </div>
         
         <div class="kpi kpi-accent">
-            <i data-lucide="database"></i>
-            <span>Power BI Embedded</span>
+            <i data-lucide="check-circle-2"></i>
+            <span>Power BI Certified Report</span>
         </div>
         
         <div class="kpi kpi-accent">
-            <i data-lucide="terminal"></i>
-            <span>DAX Expressions</span>
+            <i data-lucide="database"></i>
+            <span>DAX Analytics Engine</span>
         </div>
     </div>
 
     <!-- CONSOLE VIEWPORT -->
     <main class="dashboard-container">
         <div class="dashboard-console-panel">
-            <!-- HUD corners for premium game aesthetic -->
-            <div class="hud-corner corner-tl"></div>
-            <div class="hud-corner corner-tr"></div>
-            <div class="hud-corner corner-bl"></div>
-            <div class="hud-corner corner-br"></div>
-
             <!-- Console Header Bar -->
             <div class="console-header-bar">
                 <div class="console-status">
                     <div class="console-status-dot"></div>
-                    <span>🕹️ POWER BI CORE RUNTIME: ONLINE</span>
+                    <span>ENTERPRISE GATEWAY REPORT STATUS: ACTIVE</span>
                 </div>
                 <div class="console-sysinfo">
-                    <span>GRID_ENG: VER_2026 // RESOLUTION: 1080P</span>
+                    <span>DATABASE UPDATE: COMPLETED // EMBEDDED VIEWPORT: 1080P</span>
                 </div>
             </div>
 
@@ -500,7 +431,7 @@
             }
         });
 
-        // Ensure clicking the ESC button navigates correctly
+        // Ensure clicking the Return button navigates correctly
         document.querySelector('.back-btn').addEventListener('click', (e) => {
             e.preventDefault();
             window.location.href = 'index.html';
